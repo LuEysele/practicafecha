@@ -1,9 +1,7 @@
 
-const day = document.getElementById("day");
-const month = document.getElementById("month");
-const year = document.getElementById("year");
-const daysOfTheWeek = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
-const labDays = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes'];
+let day = document.getElementById("day");
+let month = document.getElementById("month");
+let year = document.getElementById("year");
 let limDias;
 //const result = document.getElementById("text1");
 
@@ -26,10 +24,10 @@ document.querySelectorAll("input").forEach(item => {
 
 let laboralDay = () =>{
             const weekday = ["Domingo, fin de semana", "Lunes, día laborable", "Martes, día laborable", "Miércoles, día laborable", "Jueves, día laborable", "Viernes, día laborable", "Sábado, fin de semana"];
-            const date = new Date(`${year.value} ${month.value} ${day.value}`)
-            date.setFullYear(year.value)
-            document.querySelector("#text1").innerHTML = weekday[date.getDay()]
-    
+            const date = new Date(`${year.value} ${month.value} ${day.value}`);
+            date.setFullYear(year.value);
+            document.querySelector("#text1").innerHTML = weekday[date.getDay()];
 }
+
 
 

@@ -12,7 +12,7 @@
 
 <body>
     <h1>Práctica Fecha</h1>
-    <h3 id="text1" onclick="laboralDay()">Este programa te indica el día de la semana según la fecha que indiques</h3>
+    <h3 id="text1">Este programa te indica el día de la semana según la fecha que indiques</h3>
     <form name="form1">
         <div>
         <input type="text" name="pincode" maxlength="2" id="day" pattern="\d{2}" placeholder="day" min="1" max="31" step="1"
@@ -23,9 +23,10 @@
 
         <input type="text" name="pincode" maxlength="4" id="year" pattern="\d{4}" placeholder="year" min="1" step="1"
         pattern="[1-9][0-9]+" required />
-    </div>
         <br />
-        <input type="Submit" id="boton"/>
+        <input type="Submit" id="boton" onclick="laboralDay()"/>
+    </div>
+        
     </form>
 
 
