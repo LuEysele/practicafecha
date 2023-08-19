@@ -3,10 +3,10 @@ let day = document.getElementById("day");
 let month = document.getElementById("month");
 let year = document.getElementById("year");
 let limDias;
-//const result = document.getElementById("text1");
+const result = document.getElementById("text1");
 
 document.querySelectorAll("input").forEach(item => {
-    item.addEventListener("input", event => {
+    item.addEventListener("input", () => {
     switch(month){
         case 2:
             year%4 === 0 ? limDias = 29 : limDias = 28;
@@ -18,16 +18,15 @@ document.querySelectorAll("input").forEach(item => {
             limDias = 31;
             break;
     }
-
     })
 });
 
 let laboralDay = () =>{
-            const weekday = ["Domingo, fin de semana", "Lunes, día laborable", "Martes, día laborable", "Miércoles, día laborable", "Jueves, día laborable", "Viernes, día laborable", "Sábado, fin de semana"];
+    event.preventDefault()
+            const weekday = ["Domingo, día inhábil", "Lunes, día hábil", "Martes, día hábil", "Miércoles, día hábil", "Jueves, día hábil", "Viernes, día hábil", "Sábado, día inhábil"];
             const date = new Date(`${year.value} ${month.value} ${day.value}`);
             date.setFullYear(year.value);
-            document.querySelector("#text1").innerHTML = weekday[date.getDay()];
+            result.innerHTML = weekday[date.getDay()];
 }
-
 
 
