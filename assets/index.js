@@ -5,6 +5,7 @@ let year = document.getElementById("year");
 let limDias;
 const result = document.getElementById("text1");
 
+// se declara
 document.querySelectorAll("input").forEach(item => {
     item.addEventListener("input", () => {
     switch(month){
@@ -23,10 +24,10 @@ document.querySelectorAll("input").forEach(item => {
 
 let laboralDay = () =>{
     event.preventDefault()
-            const weekday = ["Domingo, día inhábil", "Lunes, día hábil", "Martes, día hábil", "Miércoles, día hábil", "Jueves, día hábil", "Viernes, día hábil", "Sábado, día inhábil"];
+            const daysOTW = ["Domingo, día inhábil", "Lunes, día hábil", "Martes, día hábil", "Miércoles, día hábil", "Jueves, día hábil", "Viernes, día hábil", "Sábado, día inhábil"];
             const date = new Date(`${year.value} ${month.value} ${day.value}`);
             date.setFullYear(year.value);
-            result.innerHTML = weekday[date.getDay()];
+            result.innerHTML = daysOTW[date.getDay()];
 }
 
 
