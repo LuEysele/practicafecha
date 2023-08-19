@@ -5,7 +5,7 @@ const year = document.getElementById("year");
 const daysOfTheWeek = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
 const labDays = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes'];
 let limDias;
-const result = document.getElementById("text1");
+//const result = document.getElementById("text1");
 
 document.querySelectorAll("input").forEach(item => {
     item.addEventListener("input", event => {
@@ -25,11 +25,10 @@ document.querySelectorAll("input").forEach(item => {
 });
 
 let laboralDay = () =>{
-    const daysOfTheWeek = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
-    const labDays = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes'];
-    const dateSet = new Date( `${year.value} ${month.value} ${day.value}`);
-    const result = labDays.includes(daysOfTheWeek) ? `El día es ${daysOfTheWeek}, es un día hábil` : `El día es ${daysOfTheWeek}, es un día inhábil`;
-    result.textContent = dateSet;
+            const weekday = ["Domingo, fin de semana", "Lunes, día laborable", "Martes, día laborable", "Miércoles, día laborable", "Jueves, día laborable", "Viernes, día laborable", "Sábado, fin de semana"];
+            const date = new Date(`${year.value} ${month.value} ${day.value}`)
+            date.setFullYear(year.value)
+            document.querySelector("#text1").innerHTML = weekday[date.getDay()]
     
 }
 
